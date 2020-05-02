@@ -66,7 +66,7 @@ def vqa_processing(image_dir, annotation_file, question_file, valid_answer_set, 
     unk_ans_count = 0 # 没有有效回答的例子数目
     for n_q, q in enumerate(questions):#对于每一问题
         if (n_q+1) % 10000 == 0:
-            print('processing %d / %d' % (n_q+1, len(questions)))
+            print(f'processing {round(10000*(n_q+1)/len(questions))/100}%')
         image_id = q['image_id'] # 与问题对应的图像id
         question_id = q['question_id'] # 问题id
         image_name = image_name_template % image_id # 图像文件名

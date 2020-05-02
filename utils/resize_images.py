@@ -2,7 +2,6 @@
 import os
 import argparse
 from PIL import Image
-from numpy.random import rand
 
 from VisualQA_Path import img
 
@@ -32,7 +31,7 @@ def resize_images(input_dir, output_dir, size):
                         img.save(os.path.join(output_dir+'/'+input_dir.split('/')[-1:][0]+'/'+idir.name, image))
             except(IOError, SyntaxError) as e:
                 print(f'ERROR `{e}` OCCURRED.')
-            if (iimage+1) % (789*rand()) == 0:
+            if (iimage+1) % 1000 == 0:
                 print(f"[{iimage+1}/{n_images}] Resized the images and saved into '{output_dir+'/'+input_dir.split('/')[-1:][0]+'/'+idir.name}'.")
 
 def main(params):
