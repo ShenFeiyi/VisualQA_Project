@@ -111,7 +111,7 @@ def main(params):
                 if batch_idx % 1 == 0:
                     print('| {} SET | Epoch [{:02d}/{:02d}], Step [{:04d}/{:04d}], Loss: {:.4f}'
                           .format(phase.upper(), epoch+1, params['num_epochs'], batch_idx, int(batch_step_size), loss.item()))
-                if batch_idx == 10: # too slow !!
+                if batch_idx == 20: # too slow !!
                     break
 
             # Print the average loss and accuracy in an epoch.
@@ -204,10 +204,10 @@ if __name__ == '__main__':
         'word_embed_size':300,
         'num_layers':2,
         'hidden_size':512,
-        'learning_rate':1e-3,
+        'learning_rate':0.01,
         'step_size':10,
         'gamma':0.1,
-        'num_epochs':5,
+        'num_epochs':6,
         'batch_size':156,
         'num_workers':0, # 多线程
         # if num_workers = 8, for MacOS does not support CUDA,
